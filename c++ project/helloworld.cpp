@@ -1,5 +1,17 @@
 #include <iostream>
 
+// There is no permission for an entity having the same name variable with another entity
+// this can cause error while we are redelaration some variable, so here come the namespace
+// to preventing conflict names
+
+namespace first {
+   int x = 1;
+} 
+
+namespace second {
+    int x = 2;
+}
+
 int main(){
     // This is the comment
     /*
@@ -13,6 +25,7 @@ int main(){
     // std::cout << "It's really good!" << "\n";
 
     // integer (whole number)
+    int x = 0;
     int age = 21;
     int year = 2023;
     int days = 7.5;
@@ -47,5 +60,7 @@ int main(){
     double radius = 10;
     double circumference = 2 * PI * radius;
 
-    std::cout << circumference << " cm" << '\n';
+    std::cout << x << '\n';
+    std::cout << first::x << '\n'; // scope resolution operator
+    std::cout << second::x << '\n'; // scope resolution operator
 }
